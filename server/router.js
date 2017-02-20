@@ -1,9 +1,6 @@
-module.exports = function(app) {
-	app.get('/', function(req, res, next) {
-		res.send("Your directional abilities are not lacking, you found the home page!")
-	});
+var Auth = require('./controllers/auth');
+var User = require('./models/user');
 
-	app.get('/', function(req,res,next){
-		res.send("You just signed up for the best app you'll ever see. Grab a drink and prepare to be amazed");
-	});
+module.exports = function(app) {
+	app.post('/signup', Auth.signup);
 }
