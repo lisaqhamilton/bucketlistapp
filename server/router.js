@@ -1,6 +1,6 @@
 module.exports = function(app) {
 	app.get('/', function(req, res, next) {
-		res.send("How ya doing, home page!")
+		res.send("Your directional abilities are not lacking, you found the home page!")
 	});
 
 	app.get('/', function(req,res,next){
