@@ -4,6 +4,7 @@ import React, {Component} from 'react';
 	import ComponentsIntro from './2_ComponentsIntro.js';
 	import PropsIntro from './3_PropsIntro.js';
 	import StateIntro from './4_StateIntro.js';
+	import ChildComponentsIntro from './5_ChildComponentsIntro.js';
 
 		export default class App extends Component {
 			render() {
@@ -14,6 +15,7 @@ import React, {Component} from 'react';
 						<ComponentsIntro />
 						<PropsIntro name="Michael Bolton" title="The Neverending Elevator Music" />
 						<StateIntro />
+						<ChildComponentsIntro />
 					</div>
 					);
 			}

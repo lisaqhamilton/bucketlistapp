@@ -9,7 +9,7 @@ class StateIntro extends React.Component {
 		}
 	}
 	changeNameOne(event) {
-		this.setState({otherName: event.target.value})
+		this.setState({name: event.target.value})
 	}
 	changeNameTwo(event) {
 		this.setState({otherName: event.target.value})
