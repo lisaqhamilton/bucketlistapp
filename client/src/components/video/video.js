@@ -1,11 +1,12 @@
 import _ from 'lodash';
-import React, { Component } from 'react';
+import React from 'react';
+import { Component } from 'react';
 import ReactDom from 'react-dom';
 import YTSearch from 'youtube-api-search';
 import SearchBar from './search-bar';
 import VideoDetail from './video-detail';
 
-const API_Key = 'AIzaSyCHiqMgJetwdpYMYJNJlugZSXU_OB-5NF8';
+const API_KEY = 'AIzaSyCNSGt1YR8IjmbM8KpNaaviLKqQ9C59T6M';
 
 class Video extends Component {
 	constructor(props) {
@@ -17,7 +18,7 @@ class Video extends Component {
 		this.videoSearch('bucketlist');
 	}
 	videoSearch(term) {
-		YTSearch({key: API_Key, term: term}, (videos) => {
+		YTSearch({key: API_KEY, term: term}, (videos) => {
 			this.setState({
 				videos: videos,
 				selectedVideo: videos[0]
@@ -29,7 +30,7 @@ class Video extends Component {
 		return (
 			<div>
 				<SearchBar on SearchTermChange={videoSearch} />
-				<VideoDetail video={this.state.selectedVideo}/>
+				<VideoDetail video={this.state.selectedVideo} />
 			</div>
 			);
 	}
