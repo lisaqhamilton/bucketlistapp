@@ -24,10 +24,10 @@ export function signinUser({ email, password }) {
 		});
 	}
 }
-export function createPost(props) {
-	const request = axios.post(`${ROOT_URL}/posts`, props);
-	return {
-		type: CREATE_POSTS,
-		payload: request
-	};
-}
+// export function createPost(props) {
+// 	const request = axios.post(`${ROOT_URL}/posts`, props);
+// 	return {
+// 		type: CREATE_POSTS,
+// 		payload: request
+// 	};
+// }

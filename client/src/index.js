@@ -17,8 +17,9 @@ ReactDOM.render(
 		<Router history={browserHistory}>
 			<Route path="/" component={App}>
 				<Route path="signin" component={Signin}/>
-				
+				<Route path="newitem" />
 			</Route>
+
 		</Router>
 	</Provider>,
 	document.querySelector('.container'));

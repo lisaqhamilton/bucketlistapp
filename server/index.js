@@ -8,11 +8,12 @@ var cors = require('cors');
 //DB connection
 mongoose.connect('mongodb://localhost:bucket/bucket');
 
+app.use(cors());
 //Middleware
 app.use(bodyParser.json({ type: '*/*'}));
 router(app);
 
-app.use(cors());
+
 
 var port = process.env.PORT || 3000;
 
