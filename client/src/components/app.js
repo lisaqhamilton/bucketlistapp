@@ -14,7 +14,7 @@ import SearchBar from './video/search-bar';
 					<NavBarHeader />
 					{this.props.children}
 					<Video />
-					{this.formProps}
+					
 					
 				</div>
 				);

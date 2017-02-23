@@ -2,13 +2,14 @@ import React from 'react';
 import { Component, PropTypes } from 'react';
 import { Link } from 'react-router';
 import { reduxForm } from 'redux-form';
+import { createPost } from '../../actions/index';
 
 
 
 class ListItem extends Component {
 	handleFormSubmit(formProps) {
 		//call action creator to sign up the user
-		console.log(formProps);
+		this.props.createPost(formProps);
 	}
 	render() {
 		const { fields: {title, topic, url, content }, handleSubmit } = this.props;
@@ -43,4 +44,4 @@ class ListItem extends Component {
 export default reduxForm({
 	form: 'PostsNewForm',
 	fields: ['title', 'topic', 'url', 'content']
-})(ListItem);
+}, null, { createPost })(ListItem);
