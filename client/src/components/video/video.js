@@ -4,6 +4,7 @@ import ReactDom from 'react-dom';
 import YTSearch from 'youtube-api-search';
 import SearchBar from './search-bar';
 import VideoDetail from './video-detail';
+import ListItem from '../comments/comments';
 
 const API_Key = 'AIzaSyALRyzzDhd0mMr2iTjpNtBmENKC_K6jHxY';
 
@@ -30,6 +31,7 @@ class Video extends Component {
 			<div>
 				<SearchBar on SearchTermChange={videoSearch} />
 				<VideoDetail video={this.state.selectedVideo} />
+				<ListItem />
 			</div>
 			);
 	}
