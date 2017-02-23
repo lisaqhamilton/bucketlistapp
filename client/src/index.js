@@ -3,11 +3,11 @@ import ReactDOM from 'react-dom';
 import { Provider } from 'react-redux';
 import { createStore, applyMiddleware } from 'redux';
 import { Router, Route, IndexRoute, browserHistory } from 'react-router';
-import reduxThunk from 'redux-thunk';
 import App from './components/app';
 import reducers from './reducers';
 import Signin from './components/auth/signin';
 import ListItem from './components/comments/comments';
+import reduxThunk from 'redux-thunk';
 
 
 var createStoreWithMiddleware = applyMiddleware(reduxThunk)(createStore);

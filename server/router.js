@@ -9,7 +9,7 @@ var requireAuth = passport.authenticate('jwt', {session: false});
 module.exports = function(app) {
 
 	app.get('/', requireAuth, function(req, res) {
-		res.send('Holla!');
+		res.send({message: 'Holla!'});
 
 	});
 	
