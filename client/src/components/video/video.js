@@ -29,7 +29,7 @@ class Video extends Component {
 		const videoSearch = _.debounce((term)=>{ this.videoSearch(term) }, 300);
 		return (
 			<div>
-				<SearchBar on SearchTermChange={videoSearch} />
+				<SearchBar onSearchTermChange={videoSearch} />
 				<VideoDetail video={this.state.selectedVideo} />
 				<ListItem />
 			</div>
