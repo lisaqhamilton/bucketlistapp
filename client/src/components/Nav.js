@@ -7,7 +7,7 @@ import { Link } from 'react-router';
 	class NavBarHeader extends Component {
 		renderLinks() {
 			if(this.props.authenticated) {
-				return <NavItem href="#">Get Me Out of Here</NavItem>
+				return <NavItem href="/signout">Get Me Out of Here</NavItem>
 			} else {
 				return [
 				<NavItem key={1} href="signin">Sign Me In To This Awesome App</NavItem>,

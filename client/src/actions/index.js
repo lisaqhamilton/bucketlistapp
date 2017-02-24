@@ -28,6 +28,13 @@ export function authError(error) {
 		payload: error
 	};
 }
+//pupose of type is to catch unauth_user case
+//flips auth fag to false & there won't be any links associated with them
+//other thing to do is get rid of token
+export function signoutUser() {
+	localStorage.removeItem('token');
+		return {type: UNAUTH_USER};
+}
 // export function createPost(props) {
 // 	const request = axios.post(`${ROOT_URL}/posts`, props);
 // 	return {
