@@ -10,8 +10,8 @@ import { Link } from 'react-router';
 				return <NavItem href="/signout">Get Me Out of Here</NavItem>
 			} else {
 				return [
-				<NavItem key={1} href="signin">Sign Me In To This Awesome App</NavItem>,
-				<NavItem key={2} href="signup">I Would Pay To Use This But It's Free So I Won't</NavItem>
+				<NavItem key={1} href="/signin">Sign Me In To This Awesome App</NavItem>,
+				<NavItem key={2} href="/signup">I Would Pay To Use This But It's Free So I Won't</NavItem>
 				];
 			}
 		}
