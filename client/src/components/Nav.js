@@ -1,8 +1,21 @@
 import React, {Component} from 'react';
 import {Navbar, Nav, NavItem, NavDropdown, DropdownButton, MenuItem, CollapsibleNav} from 
 'react-bootstrap';
+import { connect } from 'react-redux';
+import { Link } from 'react-redux';
 
 	class NavBarHeader extends Component {
+		renderLinks() {
+			if(this.props.authenticated) {
+				return <NavItem href="#">Log Me Out of Here</NavItem>
+			} else {
+				return [
+				<NavItem key={1} href="signin">Sign Me In To This Awesome App</NavItem>,
+				<NavItem key={2} href="signup">I Would Pay To Use This But It's Free So I Won't</NavItem>
+				];
+			}
+			}
+		
 		render() {
 			return (
 				<Navbar>
@@ -12,14 +25,11 @@ import {Navbar, Nav, NavItem, NavDropdown, DropdownButton, MenuItem, Collapsible
 					</Navbar.Brand>
 				</Navbar.Header>
 				<Nav>
-					<NavItem eventKey={1} href='#'>Sign In</NavItem>
-					<NavItem eventKey={2} href='#'>Sign Up</NavItem>
-					<NavDropdown eventKey={3} title="Dropdown" id="basic-nav-dropdown">
-						<MenuItem eventKey={3.1}>Action</MenuItem>
-						<MenuItem eventKey={3.2}>Another Action</MenuItem>
-						<MenuItem eventKey={3.3}>Action</MenuItem>
-						<MenuItem divider />
-						<MenuItem eventKey={3.3}>Seperated link</MenuItem>
+					{this.renderLinks()}
+					<NavDropdown key={3} title="Video Options" id="basic-nav-dropdown">
+						<MenuItem key={3.1}>Show Me A Video</MenuItem>
+						<MenuItem key={3.2}>Show Me An Even Better Video</MenuItem>
+						<MenuItem key={3.3}>Show Me A Video To Send My Enemies</MenuItem>
 					</NavDropdown>
 				</Nav>
 				</Navbar>
@@ -29,4 +39,10 @@ import {Navbar, Nav, NavItem, NavDropdown, DropdownButton, MenuItem, Collapsible
 		}
 	}
 
-	export default NavBarHeader;
+function mapStateToProps(state) {
+	return {
+		authenticated: state.auth.authenticated
+	};
+}
+	
+export default connect(mapStateToProps)(NavBarHeader);
