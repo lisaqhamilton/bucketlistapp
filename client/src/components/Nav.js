@@ -2,19 +2,19 @@ import React, {Component} from 'react';
 import {Navbar, Nav, NavItem, NavDropdown, DropdownButton, MenuItem, CollapsibleNav} from 
 'react-bootstrap';
 import { connect } from 'react-redux';
-import { Link } from 'react-redux';
+import { Link } from 'react-router';
 
 	class NavBarHeader extends Component {
 		renderLinks() {
 			if(this.props.authenticated) {
-				return <NavItem href="#">Log Me Out of Here</NavItem>
+				return <NavItem href="#">Get Me Out of Here</NavItem>
 			} else {
 				return [
 				<NavItem key={1} href="signin">Sign Me In To This Awesome App</NavItem>,
 				<NavItem key={2} href="signup">I Would Pay To Use This But It's Free So I Won't</NavItem>
 				];
 			}
-			}
+		}
 		
 		render() {
 			return (
