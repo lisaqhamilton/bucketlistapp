@@ -7,6 +7,7 @@ import App from './components/app';
 import reducers from './reducers';
 import Signin from './components/auth/signin';
 import ListItem from './components/comments/comments';
+import ListItems from './components/comments/listcomments';
 import reduxThunk from 'redux-thunk';
 import Signout from './components/auth/signout';
 import Signup from './components/auth/signup';
@@ -22,7 +23,8 @@ ReactDOM.render(
 				<Route path="signin" component={Signin}/>
 				<Route path="signout" component={Signout}/>
 				<Route path="signup" component={Signup}/>
-				 <Route path="newitem" component={RequireAuth(ListItem)}/>
+				<Route path="newitem" component={RequireAuth(ListItem)}/>
+				<Route path="items" component={RequireAuth(ListItems)}/>
 			</Route>
 
 		</Router>

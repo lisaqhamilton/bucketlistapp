@@ -1,6 +1,6 @@
 import axios from 'axios';
 import { browserHistory } from 'react-router';
-import { AUTH_USER, UNAUTH_USER, AUTH_ERROR, CREATE_POSTS } from './types';
+import { AUTH_USER, UNAUTH_USER, AUTH_ERROR, CREATE_POSTS, FETCH_POSTS } from './types';
 import authReducer from '../reducers/auth_reducer';
 
 // export const CREATE_POSTS = 'CREATE_POSTS';
@@ -60,6 +60,20 @@ export function createPost(props) {
 		});
 	}
 }
+export function fetchPosts() {
+	return function(dispatch) {
+		axios.get(`${ROOT_URL}/items`, config)
+		.then( (response) => {
+			console.log("Response", response)
+			dispatch({
+				type: FETCH_POSTS,
+				payload: response
+			});
+		});
+	}
+}
+
+
 export function authError(error) {
 	return {
 		type: AUTH_ERROR,
