@@ -56,7 +56,7 @@ export function createPost(props) {
 				type: CREATE_POSTS,
 				payload: request
 			});
-			browserHistory.push('/newitem');
+			browserHistory.push('/items');
 		});
 	}
 }
