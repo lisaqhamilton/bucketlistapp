@@ -10,6 +10,7 @@ import ListItem from './components/comments/comments';
 import reduxThunk from 'redux-thunk';
 import Signout from './components/auth/signout';
 import Signup from './components/auth/signup';
+import RequireAuth from './components/auth/require_auth';
 
 
 var createStoreWithMiddleware = applyMiddleware(reduxThunk)(createStore);
@@ -21,7 +22,7 @@ ReactDOM.render(
 				<Route path="signin" component={Signin}/>
 				<Route path="signout" component={Signout}/>
 				<Route path="signup" component={Signup}/>
-				<Route path="newitem" />
+				 <Route path="newitem" component={RequireAuth(ListItem)}/>
 			</Route>
 
 		</Router>

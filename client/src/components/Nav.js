@@ -33,8 +33,6 @@ import { Link } from 'react-router';
 					</NavDropdown>
 				</Nav>
 				</Navbar>
-
-		
 			);
 		}
 	}
