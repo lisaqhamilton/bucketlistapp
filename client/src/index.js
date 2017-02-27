@@ -11,6 +11,7 @@ import ListItems from './components/comments/listcomments';
 import reduxThunk from 'redux-thunk';
 import Signout from './components/auth/signout';
 import Signup from './components/auth/signup';
+import ListShow from './components/comments/showcomments';
 import RequireAuth from './components/auth/require_auth';
 
 
@@ -25,6 +26,7 @@ ReactDOM.render(
 				<Route path="signup" component={Signup}/>
 				<Route path="newitem" component={RequireAuth(ListItem)}/>
 				<Route path="items" component={RequireAuth(ListItems)}/>
+				<Route path="items/:id" component={RequireAuth(ListShow)}/>
 			</Route>
 
 		</Router>

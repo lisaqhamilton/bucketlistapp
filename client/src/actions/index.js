@@ -1,6 +1,6 @@
 import axios from 'axios';
 import { browserHistory } from 'react-router';
-import { AUTH_USER, UNAUTH_USER, AUTH_ERROR, CREATE_POSTS, FETCH_POSTS } from './types';
+import { AUTH_USER, UNAUTH_USER, AUTH_ERROR, CREATE_POSTS, FETCH_POSTS, DELETE_POSTS, FETCH_POST } from './types';
 import authReducer from '../reducers/auth_reducer';
 
 // export const CREATE_POSTS = 'CREATE_POSTS';
@@ -73,10 +73,35 @@ export function fetchPosts() {
 	}
 }
 
-
 export function authError(error) {
 	return {
 		type: AUTH_ERROR,
 		payload: error
 	};
+}
+
+export function fetchPost(id) {
+	return function(dispatch) {
+		axios.get(`${ROOT_URL}/items${id}`, config)
+		.then( (response) => {
+			console.log("Response", response)
+			dispatch({
+				type: FETCH_POST,
+				payload: response
+			});
+		});
+	}
+}
+export function deletePosts(id) {
+	return function(dispatch) {
+		axios.delete(`${ROOT_URL}/items${id}`, config)
+		.then( (response) => {
+			console.log("Response", response)
+			dispatch({
+				type: DELETE_POSTS,
+				payload: response
+			});
+			browserHistory.push('/items');
+		});
+	}
 }
